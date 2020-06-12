@@ -72,7 +72,7 @@ body {
     height: auto;
   }
 
-  &-list {
+  &__list {
     display: flex;
     padding-left: 2.5rem;
 
@@ -81,7 +81,7 @@ body {
     }
   }
 
-  &-item {
+  &__item {
     @extend %button;
     margin-right: 1rem;
     margin-left: 1rem;
@@ -94,7 +94,7 @@ body {
     }
   }
 
-  &-item-remove {
+  &__item-remove {
     padding: 1rem;
     margin-left: 1rem;
     border: 0;
@@ -162,5 +162,167 @@ body {
 
   &--featured {
     border-left: 1rem solid $desaturatedDarkCyan;
+  }
+
+  &__info {
+    padding-left: 2.5rem;
+    width: 95%;
+  }
+
+  &__offer {
+    display: flex;
+    position: relative;
+
+    @media only screen and (max-width: $medium) {
+      display: block;
+      border-bottom: 0.1rem solid $darkGrayishCyan;
+    }
+
+    &-img {
+      @media only screen and (max-width: $medium) {
+        position: relative;
+        transform: translate(-25%, -50%);
+        width: 50px;
+      }
+    }
+    &-info {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      margin-left: 3rem;
+
+      @media only screen and (max-width: $medium) {
+        margin-left: 0rem;
+
+        & > * {
+          padding-bottom: 1rem;
+        }
+      }
+    }
+  }
+
+  &__first-info {
+    display: flex;
+    align-items: center;
+
+    :not(:last-child) {
+      margin-right: 1rem;
+    }
+
+    @media only screen and (max-width: $medium) {
+      justify-content: flex-start;
+    }
+  }
+
+  &__company {
+    color: $desaturatedDarkCyan;
+    font-weight: 700;
+    font-size: 1.3rem;
+  }
+
+  &__new,
+  &__featured {
+    color: white;
+    border-radius: 10rem;
+    padding: 0.6rem 1rem;
+    text-transform: uppercase;
+    font-weight: 700;
+    font-size: 0.8rem;
+  }
+
+  &__new {
+    background-color: $desaturatedDarkCyan;
+
+    &:after {
+      content: '!';
+    }
+  }
+
+  &__job-name {
+    &:hover {
+      color: $desaturatedDarkCyan;
+    }
+  }
+
+  &__featured {
+    background-color: $veryDarkGrayishCyan;
+  }
+  &__third-info {
+    display: flex;
+    color: $darkGrayishCyan;
+    font-size: 1.3rem;
+
+    @media only screen and (max-width: $medium) {
+      font-size: 1.2rem;
+    }
+
+    :not(:last-child) {
+      margin-right: 3rem;
+
+      &:after {
+        content: '';
+        transform: translate(200%, 100%);
+        border-radius: 100%;
+        position: absolute;
+        background: $darkGrayishCyan;
+        height: 0.5rem;
+        width: 0.5rem;
+      }
+    }
+  }
+
+  &__skills {
+    padding-right: 2.5rem;
+
+    &-btn {
+      @extend %button;
+      padding: 1rem;
+      cursor: pointer;
+
+      &:hover {
+        background-color: $desaturatedDarkCyan;
+        color: white;
+      }
+
+      &:focus,
+      &:active {
+        outline: none;
+      }
+
+      &:focus {
+        box-shadow: 0 0.1rem 1rem rgba($veryDarkGrayishCyan, 0.5);
+      }
+
+      &:active {
+        transform: translateY(-0.1rem);
+        box-shadow: 0 0.5rem 1rem rgba($veryDarkGrayishCyan, 0.2);
+      }
+    }
+
+    @media only screen and (max-width: $medium) {
+      padding-bottom: 1.5rem;
+    }
+
+    &-list {
+      display: flex;
+    }
+
+    &-item {
+      &:not(:last-child) {
+        margin-right: 1rem;
+      }
+    }
+
+    @media only screen and (max-width: $medium) {
+      padding-left: 2.5rem;
+
+      &-list {
+        flex-wrap: wrap;
+      }
+
+      &-item {
+        padding: 2rem 0.1rem 2rem 0rem;
+      }
+    }
   }
 }

@@ -37,6 +37,11 @@ This project was developed with the following technologies:
 
 ## 🔖 Layout
 
+<h1 align="center">
+    <img alt="FrontendD" title="#FMD" src=".github/desktop.jpg" width="350px" />
+    <img alt="FrontendM" title="#FMM" src=".github/mobile.jpg" width="350px" />
+    <img alt="FrontendJ" title="#FMJ" src=".github/desktop-jobs.jpg" width="350px" />
+</h1>
 ## API
 
 https://api.jsonbin.io/b/5e8884988841e979d0fd84ed/5

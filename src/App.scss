@@ -1,0 +1,166 @@
+/* 
+================
+Color Variables
+================
+*/
+
+/*Primario*/
+$desaturatedDarkCyan: hsl(180, 29%, 50%);
+/*Neutral*/
+$lightGrayishCyanFt: hsl(180, 31%, 95%); //Filter
+$lightGrayishCyanBc: hsl(180, 52%, 96%); //Background
+$darkGrayishCyan: hsl(180, 8%, 52%);
+$veryDarkGrayishCyan: hsl(180, 14%, 20%);
+
+/*
+==================
+Default properties
+==================
+*/
+
+$medium: 64.81em; //1037px
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+  text-decoration: none;
+  list-style: none;
+}
+
+html {
+  box-sizing: border-box;
+  font-size: 62.5%; // 10px/16px = 62.5%, 1rem = 10px
+}
+
+body {
+  background-color: $lightGrayishCyanBc;
+  font-family: 'Spartan', sans-serif;
+  font-weight: 500;
+}
+
+%button {
+  color: $desaturatedDarkCyan;
+  background-color: $lightGrayishCyanFt;
+  border: 0;
+  font-family: inherit;
+  font-weight: 700;
+  border-radius: 5px;
+  font-size: 1.3rem;
+}
+
+.App {
+  display: grid;
+  row-gap: 5rem;
+  padding: 10rem 10vw 10rem 10vw;
+}
+
+.filters {
+  background-color: white;
+  box-shadow: 0rem 0rem 2rem 0.9rem rgba($veryDarkGrayishCyan, 0.2);
+  border-radius: 1rem;
+  min-height: 6rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: -20rem;
+  align-self: center;
+
+  @media only screen and (max-width: $medium) {
+    height: auto;
+  }
+
+  &-list {
+    display: flex;
+    padding-left: 2.5rem;
+
+    @media only screen and (max-width: $medium) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &-item {
+    @extend %button;
+    margin-right: 1rem;
+    margin-left: 1rem;
+    padding-left: 1rem;
+    display: flex;
+    align-items: center;
+
+    @media only screen and (max-width: $medium) {
+      margin: 1rem;
+    }
+  }
+
+  &-item-remove {
+    padding: 1rem;
+    margin-left: 1rem;
+    border: 0;
+    background-color: $desaturatedDarkCyan;
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+    cursor: pointer;
+
+    &:hover {
+      background-color: $veryDarkGrayishCyan;
+    }
+
+    &:focus,
+    &:active {
+      outline: none;
+    }
+
+    &:focus {
+      box-shadow: 0 0.1rem 0.5rem rgba($veryDarkGrayishCyan, 0.9);
+    }
+
+    &:active {
+      transform: translateY(-0.2rem);
+      box-shadow: 0 0.1rem 0.5rem rgba(black, 0.9);
+    }
+  }
+
+  &__remove-img {
+    display: block;
+  }
+
+  &__clear {
+    border: 0;
+    background-color: inherit;
+    font-family: inherit;
+    font-weight: 700;
+    margin-right: 2.5rem;
+    color: $desaturatedDarkCyan;
+    cursor: pointer;
+
+    &:hover,
+    &:focus {
+      text-decoration: underline;
+    }
+  }
+}
+
+.job-offers {
+  display: flex;
+  justify-content: space-between;
+  background-color: white;
+  box-shadow: 0rem 0rem 2rem 0.9rem rgba($veryDarkGrayishCyan, 0.2);
+  height: 15rem;
+  align-items: center;
+  margin-top: -6rem;
+  margin-bottom: 6rem;
+  border-radius: 1rem;
+
+  @media only screen and (max-width: $medium) {
+    margin-top: 0rem;
+    flex-direction: column;
+    align-items: flex-start;
+    height: auto;
+  }
+
+  &--featured {
+    border-left: 1rem solid $desaturatedDarkCyan;
+  }
+}

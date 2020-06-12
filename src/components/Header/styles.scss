@@ -1,0 +1,14 @@
+@import '../../App.scss';
+
+.header {
+  height: 15.5rem;
+  background: url(../../assets/bg-header-desktop.svg);
+  background-color: $desaturatedDarkCyan;
+  background-repeat: repeat-x;
+
+  @media only screen and (max-width: 1440px) {
+    background: url(../../assets/bg-header-mobile.svg);
+    background-size: cover;
+    background-color: $desaturatedDarkCyan;
+  }
+}
